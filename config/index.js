@@ -5,7 +5,7 @@ if (ENVIRONMENT !== 'production') require('dotenv').config();
 
 const configFile = `./${ENVIRONMENT}`;
 
-const isObject = variable => variable instanceof Object && !(variable instanceof Array);
+const isObject = variable => variable instanceof Object;
 
 /*
  * Deep immutable copy of source object into tarjet object and returns a new object.
@@ -44,6 +44,12 @@ const config = {
       apiDate: process.env.API_DATE || 'X-API-Date',
       packageVersion: process.env.PACKAGE_VERSION || 'X-Package-Version',
       nodeVersion: process.env.NODE_VERSION || 'X-Node-Version'
+    },
+    numberApi: {
+      numbers: process.env.NUMBERS_API_URL
+    },
+    hash: {
+      salt: process.env.SALT
     }
   }
 };
